@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 14% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 152 69% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 152 69% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 152 69% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-bg: 0 0% 8%;
+    --sidebar-fg: 0 0% 100%;
+    --sidebar-muted: 0 0% 40%;
+    --sidebar-accent: 152 69% 45%;
+    --sidebar-hover: 0 0% 15%;
+    --sidebar-width: 72px;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --success: 152 69% 45%;
+    --success-foreground: 0 0% 100%;
+    --pending: 38 92% 50%;
+    --pending-foreground: 0 0% 100%;
+    --failed: 0 84% 60%;
+    --failed-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 152 69% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 152 69% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 152 69% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Phone mockup styles */
+.phone-mockup {
+  background: hsl(var(--foreground));
+  border-radius: 2.5rem;
+  padding: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 280px;
+  height: 560px;
+  position: relative;
+}
+
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 24px;
+  background: hsl(var(--foreground));
+  border-radius: 0 0 1rem 1rem;
+  z-index: 10;
+}
+
+.phone-screen {
+  background: hsl(var(--card));
+  border-radius: 2rem;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* SMS bubble */
+.sms-bubble {
+  background: hsl(152 69% 92%);
+  border-radius: 1rem 1rem 0.25rem 1rem;
+  padding: 0.75rem 1rem;
+  max-width: 85%;
+  margin-left: auto;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+  word-wrap: break-word;
+}
+
+/* Status badges */
+.status-sent { background: hsl(var(--success) / 0.1); color: hsl(var(--success)); }
+.status-pending { background: hsl(var(--pending) / 0.1); color: hsl(var(--pending)); }
+.status-failed { background: hsl(var(--failed) / 0.1); color: hsl(var(--failed)); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--muted-foreground) / 0.3); border-radius: 3px; }
